@@ -1,0 +1,190 @@
+.card {
+  width: 100px;
+  height: 140px;
+  border-radius: 12px;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 
+    0 4px 6px rgba(0, 0, 0, 0.1),
+    0 2px 4px rgba(0, 0, 0, 0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 2.5rem;
+  user-select: none;
+  font-family: 'Segoe UI', sans-serif;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+}
+
+.card.small {
+  width: 60px;
+  height: 84px;
+  font-size: 1.5rem;
+}
+
+.card.playable:hover {
+  transform: translateY(-12px) scale(1.05);
+  box-shadow: 
+    0 20px 25px rgba(0, 0, 0, 0.15),
+    0 10px 10px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+}
+
+.card.playable:active {
+  transform: translateY(-8px) scale(1.02);
+}
+
+.card.not-playable {
+  cursor: not-allowed;
+  opacity: 0.4;
+  filter: grayscale(0.5);
+}
+
+/* Modern gradient backgrounds */
+.card.red {
+  background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);
+  color: white;
+}
+
+.card.blue {
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  color: white;
+}
+
+.card.green {
+  background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+  color: white;
+}
+
+.card.yellow {
+  background: linear-gradient(135deg, #ffd93d 0%, #ffb800 100%);
+  color: #2d3436;
+}
+
+.card.wild {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+  color: white;
+  animation: wildShimmer 3s ease-in-out infinite;
+}
+
+@keyframes wildShimmer {
+  0%, 100% { filter: brightness(1); }
+  50% { filter: brightness(1.2); }
+}
+
+/* Glossy overlay effect */
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.3) 0%,
+    rgba(255, 255, 255, 0) 50%,
+    rgba(0, 0, 0, 0.1) 100%
+  );
+  border-radius: 12px;
+  pointer-events: none;
+}
+
+/* Corner indicators */
+.card-corner {
+  position: absolute;
+  font-size: 1rem;
+  font-weight: 700;
+  z-index: 2;
+  opacity: 0.9;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.card.small .card-corner {
+  font-size: 0.7rem;
+}
+
+.card-corner.top-left {
+  top: 8px;
+  left: 8px;
+}
+
+.card-corner.bottom-right {
+  bottom: 8px;
+  right: 8px;
+  transform: rotate(180deg);
+}
+
+/* Center symbol */
+.card-center {
+  font-size: 3rem;
+  z-index: 1;
+  position: relative;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-shadow: 
+    0 4px 8px rgba(0, 0, 0, 0.3),
+    0 2px 4px rgba(0, 0, 0, 0.2);
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.card.small .card-center {
+  font-size: 1.8rem;
+}
+
+/* Card back design */
+.card-back {
+  background: linear-gradient(135deg, #2d3436 0%, #000000 100%);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  font-weight: 700;
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 
+    0 4px 6px rgba(0, 0, 0, 0.1),
+    0 2px 4px rgba(0, 0, 0, 0.06);
+}
+
+.card-back::before {
+  content: '';
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 10px,
+    rgba(255, 255, 255, 0.03) 10px,
+    rgba(255, 255, 255, 0.03) 20px
+  );
+  animation: movePattern 20s linear infinite;
+}
+
+@keyframes movePattern {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(50px, 50px); }
+}
+
+.card-back::after {
+  content: 'UNO';
+  position: absolute;
+  font-size: 2.5rem;
+  font-weight: 900;
+  opacity: 0.15;
+  letter-spacing: 4px;
+  z-index: 1;
+}
+
+.card-back div {
+  z-index: 2;
+}
