@@ -92,7 +92,7 @@ A fully functional UNO card game built with React, TypeScript, and modern CSS. P
 
 ## 📦 Build for Production
 
-### Quick Build
+### Client Only (Single Player)
 
 ```bash
 npm run build
@@ -111,15 +111,34 @@ chmod +x build.sh
 ./build.sh
 ```
 
+### Full Stack (Client + Server)
+
+**Windows:**
+```bash
+build-all.bat
+```
+
+**Mac/Linux:**
+```bash
+chmod +x build-all.sh
+./build-all.sh
+```
+
 ### Preview Production Build
 
 ```bash
 npm run preview
 ```
 
-The production build will be in the `dist/` folder, ready to deploy!
+### Build Output
 
-For detailed deployment instructions, see [BUILD.md](BUILD.md)
+- **Client**: `dist/` folder
+- **Server**: `server/` folder
+- **Deployment Package**: `deploy/` folder (when using build-all)
+
+For detailed instructions:
+- **Build Guide**: [BUILD.md](BUILD.md)
+- **Deployment Guide**: [DEPLOY.md](DEPLOY.md)
 
 ## Project Structure
 
