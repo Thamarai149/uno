@@ -13,13 +13,14 @@ A fully functional UNO card game built with React, TypeScript, and modern CSS. P
 - 🎯 Interactive color picker for wild cards
 - 🌐 Real-time multiplayer with WebSocket
 
-## How to Play
+## 🎮 How to Play
 
 ### Single Player
 1. Install dependencies: `npm install`
 2. Start the game: `npm run dev`
-3. Select "Single Player" mode
-4. Play against AI bots
+3. Open http://localhost:3000
+4. Select "Single Player" mode
+5. Play against AI bots
 
 ### Multiplayer
 
@@ -80,7 +81,7 @@ A fully functional UNO card game built with React, TypeScript, and modern CSS. P
   - **Wild**: Choose any color to continue
   - **Wild Draw 4**: Choose any color and next player draws 4 cards
 
-## Tech Stack
+## 🛠️ Tech Stack
 
 - React 18
 - TypeScript
@@ -88,6 +89,37 @@ A fully functional UNO card game built with React, TypeScript, and modern CSS. P
 - Socket.IO (for multiplayer)
 - Express (server)
 - CSS3 with modern gradients and animations
+
+## 📦 Build for Production
+
+### Quick Build
+
+```bash
+npm run build
+```
+
+Or use the build script:
+
+**Windows:**
+```bash
+build.bat
+```
+
+**Mac/Linux:**
+```bash
+chmod +x build.sh
+./build.sh
+```
+
+### Preview Production Build
+
+```bash
+npm run preview
+```
+
+The production build will be in the `dist/` folder, ready to deploy!
+
+For detailed deployment instructions, see [BUILD.md](BUILD.md)
 
 ## Project Structure
 

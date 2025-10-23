@@ -1,4 +1,4 @@
-import { Card, CardColor, CardValue, Player, GameDirection } from '../types';
+import { Card, CardColor, CardValue, GameDirection } from '../types';
 
 export const createDeck = (): Card[] => {
   const deck: Card[] = [];
